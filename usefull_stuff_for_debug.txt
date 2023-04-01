@@ -1,0 +1,58 @@
+total=0
+for e1,e2,e3,e4 in zip(
+                    dataset1['input_ids'],
+                    correct1['input_ids'],
+                    dataset1['attention_mask'],
+                    correct1['attention_mask']):
+     
+     print(e1.shape,e2.shape,e3.shape,e4.shape)
+     for a1,a2,a3,a4 in zip( e1,e2,e3,e4 ):
+        #print("\n")
+        #print(a1.shape,a2.shape,a3.shape,a4.shape)
+        break
+        #print("\n ORIGINAL")
+        #print(tokenizer.decode(a1.type(torch.int64)))
+        #print("\n CORRECT")
+        #print(tokenizer.decode(a2.type(torch.int64)))
+        total+=a1.shape[0]
+     print("total: ",total)
+     total=0
+     print("\n\n#########\n\n")
+
+
+
+
+
+
+
+      #print(self.scheduler.get_last_lr()[0])
+      """
+      ##################### NPleateue #####################
+      param=self.scheduler.state_dict()
+      if "_last_lr" in param.keys():
+         param["learning_rate"]=param["_last_lr"][0]
+      else:
+         param["learning_rate"]=5e-5
+      param["epoch"]=self.current_epoch
+      print(param)
+      wandb.log(param)
+      self.scheduler.step(self.f05_monitor)
+      """
+     
+
+             """
+        torch.save(tokenized_seq1,'/media/data/tokenized_seq1.pt')
+        torch.save(tokenized_seq_dev1,'/media/data/tokenized_seq_dev1.pt')
+        torch.save(tokenized_seq_test1,'/media/data/tokenized_seq_test1.pt')
+        torch.save(tokenized_corr,'/media/data/tokenized_corr.pt')
+        torch.save(tokenized_corr_dev,'/media/data/tokenized_corr_dev.pt')
+        torch.save(tokenized_corr_test,'/media/data/tokenized_corr_test.pt')
+        
+        tokenized_seq1=torch.load('/media/data/tokenized_seq1.pt')
+        tokenized_seq_dev1=torch.load('/media/data/tokenized_seq_dev1.pt')
+        tokenized_seq_test1=torch.load('/media/data/tokenized_seq_test1.pt')
+        tokenized_corr=torch.load('/media/data/tokenized_corr.pt')
+        tokenized_corr_dev=torch.load('/media/data/tokenized_corr_dev.pt')
+        tokenized_corr_test=torch.load('/media/data/tokenized_corr_test.pt')
+        """
+      
